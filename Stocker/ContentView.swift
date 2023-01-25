@@ -5,18 +5,22 @@
 //  Created by Robert Sale on 1/15/23.
 //
 
+#if DEBUG
+@_exported import HotSwiftUI
+#endif
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+        ItemView()
+#if DEBUG
+        .eraseToAnyView()
+#endif
     }
+#if DEBUG
+    @ObservedObject var iO = injectionObserver
+#endif
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
