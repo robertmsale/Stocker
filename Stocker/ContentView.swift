@@ -11,8 +11,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var navPath: NavigationPath = NavigationPath()
     var body: some View {
-        ItemView()
+        NavigationStack(path: $navPath) {
+            LoginScreen(navPath: $navPath)
+                .navigationTitle("Sign in")
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationDestination(for: User.self) { user in
+                    ScanQRView(navPath: $navPath, user: user)
+                }
+        }
 #if DEBUG
         .eraseToAnyView()
 #endif

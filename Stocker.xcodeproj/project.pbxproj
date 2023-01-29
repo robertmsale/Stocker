@@ -18,6 +18,8 @@
 		EE64F30B2974ACF5006BB21D /* StockerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE64F30A2974ACF5006BB21D /* StockerTests.swift */; };
 		EE64F3152974ACF5006BB21D /* StockerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE64F3142974ACF5006BB21D /* StockerUITests.swift */; };
 		EE64F3172974ACF5006BB21D /* StockerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE64F3162974ACF5006BB21D /* StockerUITestsLaunchTests.swift */; };
+		EEDB3C6929871027001C42C0 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = EEDB3C6829871027001C42C0 /* CodeScanner */; };
+		EEDB3C6B29871232001C42C0 /* DataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDB3C6A29871232001C42C0 /* DataTypes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,7 @@
 		EE64F3102974ACF5006BB21D /* StockerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StockerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE64F3142974ACF5006BB21D /* StockerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockerUITests.swift; sourceTree = "<group>"; };
 		EE64F3162974ACF5006BB21D /* StockerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EEDB3C6A29871232001C42C0 /* DataTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTypes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEDB3C6929871027001C42C0 /* CodeScanner in Frameworks */,
 				EE148C25297A134A00731D0E /* HotSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -109,6 +113,7 @@
 				EE148C21297A11D800731D0E /* ScanQRView.swift */,
 				EE148C26297A18F700731D0E /* ItemView.swift */,
 				EE148C28297A193300731D0E /* LoginScreen.swift */,
+				EEDB3C6A29871232001C42C0 /* DataTypes.swift */,
 			);
 			path = Stocker;
 			sourceTree = "<group>";
@@ -156,6 +161,7 @@
 			name = Stocker;
 			packageProductDependencies = (
 				EE148C24297A134A00731D0E /* HotSwiftUI */,
+				EEDB3C6829871027001C42C0 /* CodeScanner */,
 			);
 			productName = Stocker;
 			productReference = EE64F2F62974ACF4006BB21D /* Stocker.app */;
@@ -231,6 +237,7 @@
 			mainGroup = EE64F2ED2974ACF4006BB21D;
 			packageReferences = (
 				EE148C23297A134A00731D0E /* XCRemoteSwiftPackageReference "HotSwiftUI" */,
+				EEDB3C6729871027001C42C0 /* XCRemoteSwiftPackageReference "CodeScanner" */,
 			);
 			productRefGroup = EE64F2F72974ACF4006BB21D /* Products */;
 			projectDirPath = "";
@@ -277,6 +284,7 @@
 				EE148C22297A11D800731D0E /* ScanQRView.swift in Sources */,
 				EE64F2FC2974ACF4006BB21D /* ContentView.swift in Sources */,
 				EE64F2FA2974ACF4006BB21D /* StockerApp.swift in Sources */,
+				EEDB3C6B29871232001C42C0 /* DataTypes.swift in Sources */,
 				EE148C27297A18F700731D0E /* ItemView.swift in Sources */,
 				EE148C29297A193300731D0E /* LoginScreen.swift in Sources */,
 			);
@@ -440,6 +448,7 @@
 				DEVELOPMENT_TEAM = J737B85W5Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires camera permissions in order to scan items into and out of inventory.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -473,6 +482,7 @@
 				DEVELOPMENT_TEAM = J737B85W5Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires camera permissions in order to scan items into and out of inventory.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -617,6 +627,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		EEDB3C6729871027001C42C0 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -624,6 +642,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EE148C23297A134A00731D0E /* XCRemoteSwiftPackageReference "HotSwiftUI" */;
 			productName = HotSwiftUI;
+		};
+		EEDB3C6829871027001C42C0 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEDB3C6729871027001C42C0 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

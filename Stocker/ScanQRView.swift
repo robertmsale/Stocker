@@ -8,15 +8,22 @@
 import SwiftUI
 #if DEBUG
 @_exported import HotSwiftUI
+import CodeScanner
 #endif
 
 struct ScanQRView: View {
+    @Binding var navPath: NavigationPath
+    var user: User
     var body: some View {
         VStack {
-            Text("Scan QR code").font(.title2).padding(.top, 32)
+//            Text("Scan QR code").font(.title2).padding(.top, 32)
             ZStack {
-                Image("mockQRCam")
-                    .resizable()
+                CodeScannerView(codeTypes: [.qr], scanMode: .continuous) { res in
+                    switch res {
+                    case .success(let res): print(res)
+                    case .failure(let err): print(err)
+                    }
+                }
                 Rectangle()
                     .fill(Color.black)
                     .opacity(0.5)
@@ -38,6 +45,8 @@ struct ScanQRView: View {
 //                
 //            }.font(.title)
         }
+        .navigationTitle("Scan QR Code")
+        .navigationBarTitleDisplayMode(.large)
 #if DEBUG
         .eraseToAnyView()
 #endif
@@ -47,8 +56,8 @@ struct ScanQRView: View {
 #endif
 }
 
-struct ScanQRView_Previews: PreviewProvider {
-    static var previews: some View {
-        ScanQRView()
-    }
-}
+//struct ScanQRView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ScanQRView()
+//    }
+//}
